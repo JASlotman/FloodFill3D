@@ -265,9 +265,9 @@ public class floodfill_3d implements PlugIn{
                 double volume = xscale*yscale*zscale*vol_cnt;
 
 
-                IJ.log(""+(l+1)+"\t "+vol_cnt+"\t "+String.format("%.3f",volume));
+                //IJ.log((l+1)+"\t "+vol_cnt+"\t "+String.format("%.3f",volume));
 
-                //IJ.log("The measured volume for point "+(l+1)+" in the primary Channel is "+ vol_cnt +" Voxels / "+String.format("%.3f",volume)+" "+unit+"^3");
+                IJ.log("The measured volume for point "+(l+1)+" is"+ vol_cnt +" Voxels / "+String.format("%.3f",volume)+" "+unit+"^3");
                 //IJ.log("The measured volume for point "+(l+1)+" for the secondary Channel is "+ vol_cnt_s +" Voxels / "+String.format("%.3f",volume_s)+" "+unit+"^3");
                 //IJ.log("The ratio secondary/primary is "+String.format("%.3f",volume_s/volume));
 
