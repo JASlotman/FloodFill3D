@@ -228,6 +228,10 @@ public class floodfill_3d implements PlugIn{
                     IJ.showStatus("Point "+(l+1)+" / "+pta.length+" stacksize: "+ stack.size()+" Filled voxels:  "+vol_cnt);
 
                 }
+                
+                double xcenter =0;
+                double ycenter =0;
+                double zcenter =0;
 
                 if(output_ && vol_cnt > exclude_){
 
@@ -240,6 +244,9 @@ public class floodfill_3d implements PlugIn{
 
                                 if(fill[j][k][i]){
                                     ip_result.putPixel(j,k,255);
+                                    xcenter = xcenter+j;
+                                    ycenter = ycenter+k;
+                                    zcenter = zcenter+i;
                                 }
 
                             }
@@ -263,6 +270,14 @@ public class floodfill_3d implements PlugIn{
                 double zscale = c.pixelDepth;
 
                 double volume = xscale*yscale*zscale*vol_cnt;
+                xcenter = xcenter/(double)vol_cnt;
+                ycenter = ycenter/(double)vol_cnt;
+                zcenter = zcenter/(double)vol_cnt;
+
+
+
+                IJ.log(""+(l+1)+"\t "+vol_cnt+"\t "+String.format("%.3f",volume)+"\t "+xcenter+"\t "+ycenter+"\t "+zcenter+"\t "+xcenter*xscale+"\t "+ycenter*yscale+"\t "+zcenter*zscale);
+
 
 
                 //IJ.log((l+1)+"\t "+vol_cnt+"\t "+String.format("%.3f",volume));
